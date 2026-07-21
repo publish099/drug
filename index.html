@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D R U G | Premium & Trustworthy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .hero-bg { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://i.ibb.co/VcRh0tjM/codine-social-2e16d0ba-fill-1200x1200.webp') center/cover; }
+        .product-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }       
+
+.contact{ 
+    font-size: 50px;
+    text-align: center;
+    font-area: sans-serif;
+}
+    </style>
+</head>
+<body class="bg-zinc-950 text-white">
+    <!-- Navbar -->
+    <nav class="bg-black border-b border-zinc-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-shield-heart text-emerald-500 text-3xl"></i>
+                <div>
+                    <span class="text-2xl font-bold tracking-tighter">D R <span class="text-emerald-500">U G</span></span>
+                    <p class="text-[10px] text-zinc-500 -mt-1">EST. 2026 • LEGAL SATISFACTION</p>
+                </div>
+            </div>
+            
+           
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-bg h-screen flex items-center">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <h1 class="text-7xl font-bold tracking-tighter mb-4">Legal. Pure. Vital.</h1>
+            <p class="text-2xl text-zinc-300 mb-10">Premium supplements &amp; wellness solutions delivered with trust and precision.</p>
+            <div class="flex gap-4 justify-center">
+                <button onclick="document.getElementById('shop-section').scrollIntoView({behavior:'smooth'})" 
+                        class="bg-emerald-500 hover:bg-emerald-600 px-10 py-4 rounded-2xl text-lg font-semibold transition">Browse Catalog</button>
+                <button class="border border-white/70 hover:bg-white/10 px-10 py-4 rounded-2xl text-lg font-semibold transition">Verify Rx</button>
+            </div>
+            <p class="mt-12 text-sm text-emerald-400 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-shield-halved"></i> FDA COMPLIANT • SECURE DELIVERY • 100% LEGAL
+            </p>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section id="shop-section" class="max-w-7xl mx-auto px-6 py-20">
+        <h2 class="text-5xl font-bold text-center mb-4">Featured Legal Products</h2>
+        <p class="text-center text-zinc-400 mb-12">Prescription-grade &amp; over-the-counter excellence</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="product-grid">
+            <!-- Populated by JS -->
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="bg-zinc-900 py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h3 class="text-3xl font-semibold mb-12">"The gold standard in legal wellness delivery."</h3>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="bg-zinc-800 p-8 rounded-3xl flex-1">
+                    <p class="italic">"Fast, discreet, and professionally packaged. My go-to for years."</p>
+                    <p class="mt-6 font-medium">- Dr. Elena Voss, MD</p>
+                </div>
+                <div class="bg-zinc-800 p-8 rounded-3xl flex-1">
+                    <p class="italic">"Legitimate source with full traceability. Finally a platform I trust."</p>
+                    <p class="mt-6 font-medium">- Marcus Hale, Pharmacist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+   <section class="contact">
+<a href="https://t.me/Iron_Veil01_bot"><bold><i>contact</i></bold></a>
+</section>
+
+       
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6 text-center text-zinc-500 text-sm">
+            <p>© 2026 LuminaVital Dispensary • All operations fully licensed and compliant with federal &amp; state regulations.</p>
+            <p class="mt-2"><strong>Trusted Dealership.</strong></p>
+        </div>
+    </footer>
+   
+
+
+    <script>
+        const products = [
+            { id:1, name:"Fentanyl", price:89.99, cat:"Supplement", img:"https://i.ibb.co/prnnqGQ1/HEROIN-FENTANY-PILL2.jpg" },
+            { id:2, name:"Crack-cocaine-2-grams", price:124.50, cat:"Supplement", img:"https://i.ibb.co/fzCcWVzH/IMG-20260721-144633-206.jpg" },
+            { id:3, name:"Crystal methamphetamine", price:45.00, cat:"Supplement", img:"https://i.ibb.co/KjjK7rY8/Crystal-methamphetamine.jpg" },
+            { id:4, name:"MDMA/Ecstasy Pills", price:67.99, cat:"Immune Support", img:"https://i.ibb.co/F4cSyHDj/ecstacy-04.jpg" }
+        ];
+
+        let cart = [];
+
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = products.map(p => `
+                <div class="product-card bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800">
+                    <img src="${p.img}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <p class="text-emerald-400 text-xs tracking-widest">${p.cat}</p>
+                        <h4 class="font-semibold text-xl mt-1">${p.name}</h4>
+                        <p class="text-3xl font-bold mt-4">\[ {p.price}</p>
+                        
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addToCart(id) {
+            const product = products.find(p => p.id === id);
+            cart.push(product);
+            updateCartCount();
+            alert(`${product.name} added to cart!`);
+        }
+
+        function updateCartCount() {
+            document.getElementById('cart-count').textContent = cart.length;
+        }
+
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            modal.classList.toggle('hidden');
+            renderCart();
+        }
+
+        function renderCart() {
+            const container = document.getElementById('cart-items');
+            container.innerHTML = cart.map((item, i) => `
+                <div class="flex gap-4">
+                    <img src="${item.img}" class="w-16 h-16 object-cover rounded-xl">
+                    <div class="flex-1">
+                        <p class="font-medium">${item.name}</p>
+                        <p class="text-emerald-400"> \]{item.price}</p>
+                    </div>
+                    <button onclick="removeFromCart(${i})" class="text-red-400">Remove</button>
+                </div>
+            `).join('');
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            document.getElementById('cart-total').textContent = '$' + total.toFixed(2);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartCount();
+            renderCart();
+        }
+
+        function checkout() {
+            if (cart.length === 0) return;
+            alert("✅ Demo Order Placed! Thank you for choosing LuminaVital.\n\n(This is a fictional demo — no real transaction occurred.)");
+            cart = [];
+            updateCartCount();
+            toggleCart();
+        }
+
+        // Initialize
+        window.onload = () => {
+            renderProducts();
+        };
+    </script>
+</body>
+  </html>
